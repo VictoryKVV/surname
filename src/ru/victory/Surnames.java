@@ -3,6 +3,18 @@ package ru.victory;
 import java.util.Random;
 
 public class Surnames {
+
+    public static String[] getRandomSurnameList (int size){
+        String [] result = new String[size];
+        Random rand = new Random();
+        String[] source = getSurnamesList();
+        for (int i = 0; i < size; i++){
+            int index = rand.nextInt(0, source.length);
+            result[i] =  source[index];
+        }
+        return result;
+    }
+
     public static String[] getSurnamesList (){
         String [] arrayList = {
                 "Абрамова",
@@ -504,17 +516,6 @@ public class Surnames {
         };
 
         return arrayList;
-    }
-
-    public static String[] getRandomSurnameList (int size){
-        String [] result = new String[size];
-        Random rand = new Random();
-        String[] source = getSurnamesList();
-        for (int i = 0; i < size; i++){
-            int index = rand.nextInt(0, source.length);
-            result[i] =  source[index];
-        }
-        return result;
     }
 }
 
